@@ -2,7 +2,7 @@
 import Header from "./components/Header";
 
 import ImageList from "./components/ImageList";
-import {Button} from 'react-bootstrap';
+
 import {useState,useEffect} from 'react';
 import Popup from "./components/Popup";
 import React from "react";
@@ -30,7 +30,7 @@ function App() {
 
   const closeModal = () => setShowModal(false);
   const openModal = (id) =>{
-   const selected_image= imageList.find((single_elem)=>single_elem.id==id)
+   const selected_image= imageList.find((single_elem)=>single_elem.id===id)
     //  axios.get(`https://api.unsplash.com/photos/${id}?client_id=${process.env.REACT_APP_API_KEY}`) saving api calls
     // .then(response=>console.log(response.data))
      setModal(selected_image);
