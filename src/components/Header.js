@@ -4,24 +4,24 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = (props) => {
-
-const inputRef= useRef();
+   const inputRef= useRef();
+   const navigate= useNavigate();
 
   const formSubmitted=(e)=>{
-
-
-e.preventDefault();
-props.setSearchKey(inputRef.current.value);
-}
+      e.preventDefault();
+      navigate(`/search?q=${inputRef.current.value}`);
+      }
 
   return (
     <>
       <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="./">React Gallery</Navbar.Brand>
+        <Navbar.Brand> <Link to ="/" >React Gallery </Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

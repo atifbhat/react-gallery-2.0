@@ -1,11 +1,13 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 const ImageCard = (props) => {
   // console.log(props.image_details);
+  const navigate= useNavigate();
  
   const click=()=>{
-    props.click(props.image_details.id);
+    navigate(`/image/${props.image_details.id}`);
   }
   return (
     <>
